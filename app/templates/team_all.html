@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}All of Teams{% endblock %}
+
+{% block page_content %}
+<div class="row">
+    <div class="col-md-2">
+        <div class="list-group">
+            <a href="#" class="list-group-item">LCS</a>
+            <a href="#" class="list-group-item">LEC</a>
+            <a href="#" class="list-group-item">LPL</a>
+            <a href="#" class="list-group-item">LCK</a>
+            <a href="#" class="list-group-item">LMS</a>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">LCS</h3>
+                <text>League of Legends Championship Series from North America</text>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    {% for item in lcs %}
+                        <div class="col-md-1 col-sm-2 col-xs-2">
+                            <center>
+                                <a href="{{ url_for('team_profile', name=item.short_name, _external=True) }}" target="_blank">
+                                    <img src="{{ url_for('static', filename = 'team_icon/') }}{{ item.short_name }}_mid.png"
+                                                                                               alt="{{ item.short_name }}" width="36px" height="36px">
+                                </a>
+                            </center>
+                            <text>
+                                <center>
+                                    <a href="{{ url_for('team_profile', name=item.short_name, _external=True) }}" target="_blank" style="color:black; text-decoration:none">
+                                        {{ item.short_name }}
+                                    </a>
+                                </center>
+                            </text>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">LEC</h3>
+                <text>League of Legends European Championship from Europe</text>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    {% for item in lec %}
+                        <div class="col-md-1 col-sm-2 col-xs-2">
+                            <center>
+                                <a href="{{ url_for('team_profile', name=item.short_name, _external=True) }}" target="_blank">
+                                    <img src="{{ url_for('static', filename = 'team_icon/') }}{{ item.short_name }}_mid.png"
+                                                                                               alt="{{ item.short_name }}" width="36px" height="36px">
+                                </a>
+                            </center>
+                            <text>
+                                <center>
+                                    <a href="{{ url_for('team_profile', name=item.short_name, _external=True) }}" target="_blank" style="color:black; text-decoration:none">
+                                        {{ item.short_name }}
+                                    </a>
+                                </center>
+                            </text>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">LPL</h3>
+                <text>League of Legends Pro League from China</text>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    {% for item in lpl %}
+                        <div class="col-md-1 col-sm-2 col-xs-2">
+                            <center>
+                                <a href="{{ url_for('team_profile', name=item.short_name, _external=True) }}" target="_blank">
+                                    <img src="{{ url_for('static', filename = 'team_icon/') }}{{ item.short_name }}_mid.png"
+                                                                                               alt="{{ item.short_name }}" width="36px" height="36px">
+                                </a>
+                            </center>
+                            <text>
+                                <center>
+                                    <a href="{{ url_for('team_profile', name=item.short_name, _external=True) }}" target="_blank" style="color:black; text-decoration:none">
+                                        {{ item.short_name }}
+                                    </a>
+                                </center>
+                            </text>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">LPL</h3>
+                <text>League of Legends Champions Korea from Korea</text>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    {% for item in lck %}
+                        <div class="col-md-1 col-sm-2 col-xs-2">
+                            <center>
+                                <a href="{{ url_for('team_profile', name=item.short_name, _external=True) }}" target="_blank">
+                                    <img src="{{ url_for('static', filename = 'team_icon/') }}{{ item.short_name }}_mid.png"
+                                                                                               alt="{{ item.short_name }}" width="36px" height="36px">
+                                </a>
+                            </center>
+                            <text>
+                                <center>
+                                    <a href="{{ url_for('team_profile', name=item.short_name, _external=True) }}" target="_blank" style="color:black; text-decoration:none">
+                                        {{ item.short_name }}
+                                    </a>
+                                </center>
+                            </text>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
